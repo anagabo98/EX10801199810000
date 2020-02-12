@@ -19,6 +19,12 @@ router.post('/users/new', (req, res)=>{
     return res.status(200).json(newUser);
   }); 
   
+router.put('/users/upd/:id', (req, res)=>{
+   var id = parseInt(req.params.id);
+   var updUser = userModel.update( id, req.body);
+   return res.status(200).json(updUser);
+ });
+  
 
 
 module.exports = router;
